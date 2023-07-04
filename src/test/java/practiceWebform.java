@@ -14,6 +14,7 @@ import java.util.Date;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class practiceWebform {
     WebDriver driver;
+
     @BeforeAll
     public void setup() {
         driver = new ChromeDriver();
@@ -21,18 +22,17 @@ public class practiceWebform {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 
-    @DisplayName("visit the website and get title")
+    @DisplayName("Visit the webform and get title")
     @Test
-    public void getTitle(){
+    public void getTitle() {
         driver.get("https://www.digitalunite.com/practice-webform-learners");
         String title_actual = driver.getTitle();
-        String title_expected="Practice webform for learners | Digital Unite";
+        String title_expected = "Practice webform for learners | Digital Unite";
         System.out.println(title_actual);
         Assertions.assertTrue(title_actual.contains(title_expected));
-        Assertions.assertEquals(title_actual,title_expected);
+        Assertions.assertEquals(title_actual, title_expected);
 
     }
-
 
     @DisplayName("Fillup given webform and assert message")
     @Test
@@ -54,7 +54,7 @@ public class practiceWebform {
         driver.findElement(By.id("edit-date")).sendKeys(currentDate, Keys.ENTER);
 
         driver.findElement(By.id("edit-email")).sendKeys("mariamimi2247@gmail.com");
-        driver.findElement(By.id("edit-tell-us-a-bit-about-yourself-")).sendKeys("I am student of CSE student at Daffodil International University.");
+        driver.findElement(By.id("edit-tell-us-a-bit-about-yourself-")).sendKeys("I am student of CSE student at Daffodil International University,.");
 
         WebElement uploadElement = driver.findElement(By.id("edit-documentation-upload"));
 
@@ -68,7 +68,7 @@ public class practiceWebform {
 
         String actual_msg = driver.findElement(By.className("page-title")).getText();
         String expected_msg = "Thank you for your submission!";
-        Assertions.assertEquals(actual_msg,expected_msg);
+        Assertions.assertEquals(actual_msg, expected_msg);
 
     }
 
