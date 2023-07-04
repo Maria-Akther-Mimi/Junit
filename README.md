@@ -21,7 +21,7 @@ After successful submission, assert the expected message as: Thank you for your 
 # How to Generate Report:
 - The report of this ptoject is generate automated when the whole project is run.   <br />
 One can find report in:   <br /> 
-`<build>reports>index.html`
+`build>reports>index.html`
 
 # Prerequisite
 - Some gradle dependency is must for run this project These are:  <br />
